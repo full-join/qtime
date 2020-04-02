@@ -1,7 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Things we'd like to have within this app:
+
+- Screen with button to press when you get in line
+
+- Button to press when you get into the store
+
+- Location to track which store you're at
+
+- List of stores in area w/ current wait times
+
+
 
 Things you may want to cover:
 
