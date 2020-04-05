@@ -10,6 +10,9 @@ Things we'd like to have within this app:
 
 - List of stores in area w/ current wait times
 
+-Have users login so we can track data based on user ID
+
+-Homepage should have favorite/local stores for logged in user
 
 
 Things you may want to cover:
