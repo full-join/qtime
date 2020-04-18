@@ -4,11 +4,10 @@
 
 body {
   background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Avenir, sans-serif;
 }
 
 h1 {
-  font-style: Montserrat;
   justify-content: center;
   /*border: 2px solid black;
   border-radius: 5px;*/
@@ -21,8 +20,6 @@ h1 {
 }
 
 h2 {
-
-  font-style: Montserrat;
   /*border: 2px solid black;
   border-radius: 5px;*/
   float: center;
@@ -33,7 +30,6 @@ h2 {
 }
 
 ol {
-  font-style: Montserrat;
   font-weight: bold;
   font-size: 20px;
   /*border: 2px solid black;
@@ -42,7 +38,6 @@ ol {
 }
 
 li {
-  font-style: Montserrat;
   font-weight: normal;
   font-size: 18px;
   list-style-position: inside;
@@ -63,28 +58,46 @@ li {
   text-align: center;
 }
 
-li.fright {
+.button {
   font-size: 14px;
-  float: right;
   padding: 10px 24px;
-  display: block;
-  border: 1px lightgrey;
+  display: inline;
   margin: 5px;
-  background-color: #D8BFD8;
   color: black;
   border-radius: 5px;
+  a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 0px;
+      display: block;
+      border-radius: 28px;
+      background: #D8BFD8;
+      width: 45px;
+      height: 45px;
+      transition: all .3s ease;
+    }
+  &:hover {
+    &:after {
+      width: 100%;
+     }
+    }
+  }
+  a:hover {
+
+  }
+}
+
+li.fright {
+  float: right;
 }
 
 li.fleft {
-  font-size: 14px;
   float: left;
-  padding: 10px 24px;
-  display: inline;
-  background-color: #D8BFD8;
-  border: 1px lightgrey;
-  margin: 5px;
-  color: black;
-  border-radius: 5px;
 }
 
 #searchbar {
