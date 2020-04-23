@@ -80,6 +80,7 @@ li {
       width: 45px;
       height: 45px;
       transition: all .3s ease;
+      z-index: -1;
     }
   &:hover {
     &:after {
