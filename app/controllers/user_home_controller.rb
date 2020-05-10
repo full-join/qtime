@@ -1,2 +1,0 @@
-class UserHomeController < ApplicationController
-end

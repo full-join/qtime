@@ -5,12 +5,16 @@ $(document).ready(function () {
   var autocomplete;
   autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
     type: ['grocery_or_supermarket'],
-    fields: ["name", "address_component", "formatted_address", "geometry.location", "opening_hours"]
+    fields: ["name", "address_component", "formatted_address", "geometry.location", "opening_hours", "place_id"]
     });
 
-google.maps.event.addListener(autocomplete, 'place_changed', function () {
-  var near_place = autocomplete.getPlace();
 
-  });
+google.maps.event.addListener(autocomplete, 'place_changed', function () {
+    var near_place = autocomplete.getPlace();
+    console.log(near_place)
+    var resultsElement = document.getElementById("results")
+    var locationLink = '<a href="/places?placeId='+near_place.place_id+'">'+near_place.name+'</a>';
+    $(resultsElement).html(locationLink);
+});
 
 });
