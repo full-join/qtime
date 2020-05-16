@@ -10,36 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_234559) do
+ActiveRecord::Schema.define(version: 2020_04_28_002708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "blogs", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
+  create_table "locations", force: :cascade do |t|
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.bigint "blog_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["blog_id"], name: "index_likes_on_blog_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
+  create_table :user do |t|
+      t.string :name
+      t.string :email
+      t.string :password_digest
 
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "name"
-    t.string "hackeralias"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
-  end
-
-  add_foreign_key "likes", "blogs"
-  add_foreign_key "likes", "users"
-end
+      t.timestamps
+    end

@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts
-  get 'profile', to: 'users#show'
   resources :users do
   end
+  get '/profile', to: 'users#show'
   resources :resources, only: [:index]
-  get 'login', to: 'sessions#new'
+  get '/login', to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :sessions

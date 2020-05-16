@@ -24,6 +24,9 @@
       <%= f.password_field :password, class: 'input' %>
     </div>
   </div>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  <div>
   <div>
     <input type="submit" name="commit" value="Create Account" class="button is-primary" data-disable-with="Create Account">
   </div>

@@ -8,3 +8,9 @@
     <li class="button fleft"><%= link_to 'Home', home_path%></li>
   </ul>
 </div>
+
+<div>Hi <%= current_user.name %>
+  <span> 
+  (Not <%= current_user.name %>? <%= link_to "Logout", logout_path, method: :delete %>)
+  </span>
+</div>

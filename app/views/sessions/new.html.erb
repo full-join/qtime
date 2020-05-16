@@ -1,23 +1,14 @@
-<% provide(:title, "Log in") %>
-<h1 class="title">Log in</h1>
-
-<div class="columns">
-  <div class="column">
-    <%= form_for(:sessions, url: login_path) do |f| %>
-
-      <div class="field">
-        <%= f.label :email, class: 'label' %>
-        <div class="control">
-          <%= f.email_field :email, class: 'input' %>
-        </div>
-      </div>
-      <div class="field">
-        <%= f.label :password, class: 'label' %>
-        <div class="control">
-          <%= f.password_field :password, class: 'input' %>
-        </div>
-      </div>
-      <%= f.submit "Log in", class: "button is-primary" %>
-    <% end %>
+<%= form_with(url: login_path, scope: :session, local: true) do |form| %>
+  <div class="danger">
+    <%= flash[:danger] %>
   </div>
-</div>
+  <div class="actions">
+    <%= form.label :email %> 
+    <%= form.email_field :email %> 
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.submit "Log in" %>
+  </div>
+<% end %>
