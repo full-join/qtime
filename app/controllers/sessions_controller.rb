@@ -24,13 +24,16 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    user = User.find_by_email(session_params[:email])
-    if user&.authenticate(session_params[:password])
-      session[:user_id] = user.id
-      redirect_to root_url
-    else
-      flash.now[:danger] = 'Invalid email and/or password. Please try again :)'
-      render :new
+    @sessions = Sessions.new(session_params)
+
+    respond_to do |format|
+      if @sessions.save
+        format.html { redirect_to @sessions, notice: 'Session was successfully created.' }
+        format.json { render :show, status: :created, location: @sessions }
+      else
+        format.html { render :new }
+        format.json { render json: @sessions.errors, status: :unprocessable_entity }
+      end
     end
   end
 
