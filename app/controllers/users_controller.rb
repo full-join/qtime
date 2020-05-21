@@ -25,14 +25,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.create(
-      params.require(:user).permit(
-        :username, :password, :password_confirmation
-        )
-      )
+    puts params.inspect
+    @user = User.create!(user_params)
+    session[:user_id] = @user.id
 
     if @user.save
-      session[:user_id] = @user.id
       flash[:success] = 'Successfully Created User!'
       redirect_to '/profile'
     else
@@ -53,6 +50,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
 
   # DELETE /users/1
   # DELETE /users/1.json
@@ -72,7 +70,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {}).permit(:name, :email, :password, :password_confirmation)
-    end
+      params.fetch(:user, {}).permit(:username, :name, :email, :password, :password_confirmation)
     end
 end

@@ -10,23 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_002708) do
+ActiveRecord::Schema.define(version: 2020_05_19_035958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "locations", force: :cascade do |t|
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  create_table :user do |t|
-      t.string :name
-      t.string :email
-      t.string :password_digest
-
-      t.timestamps
-    end
+end
