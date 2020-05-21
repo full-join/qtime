@@ -3,20 +3,3 @@
 
     <p class="hope">We hope you find Qtime helpful, and that it brings more control and ease into your days that are already filled with a bit more uncertainty than we're all used to. Much love, from our families to yours.</p>
     <footer>&copy;2020 Qtyme Web Application</footer>
-
-    <script>import simplejson, urllib
-
-GEOCODE_BASE_URL = 'https://maps.googleapis.com/maps/api/places/json'
-
-def places(address, **geo_args):
-    geo_args.update({
-        'address': address
-    })
-
-    url = GEOCODE_BASE_URL + '?' + urllib.urlencode(geo_args)
-    result = simplejson.load(urllib.urlopen(url))
-
-    print simplejson.dumps([s['formatted_address'] for s in result['results']], indent=2)
-
-if __name__ == '__main__':
-    places(address="San+Francisco")</script>

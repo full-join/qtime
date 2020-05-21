@@ -34,3 +34,4 @@ yarn-debug.log*
 .yarn-integrity
 .idea/*
 .env
+**/*.DS_Store
