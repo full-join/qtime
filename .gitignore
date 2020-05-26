@@ -35,3 +35,4 @@ yarn-debug.log*
 .idea/*
 .env
 **/*.DS_Store
+**/playground_spec.rb
