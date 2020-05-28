@@ -6,8 +6,10 @@ on:
 
 jobs:
   rubocop:
-    # The type of runner that the job will run on
+    name: RuboCop Action
     runs-on: ubuntu-latest
-    - name: Rubocop Linter Action
-      uses: andrewmcodes/rubocop-linter-action@v3.2.0
-
+    timeout-minutes: 2
+    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    steps:
+      - name: Rubocop Linter Action
+      - uses: andrewmcodes/rubocop-linter-action@v3.2.0
