@@ -6,10 +6,10 @@ on:
 
 jobs:
   rubocop:
-    name: RuboCop Action
     runs-on: ubuntu-latest
-    timeout-minutes: 2
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
-      - name: Rubocop Linter Action
-      - uses: andrewmcodes/rubocop-linter-action@v3.2.0
+    - uses: actions/checkout@v2
+    - name: Rubocop Linter Action
+      uses: andrewmcodes/rubocop-linter-action@v3.2.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
