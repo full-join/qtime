@@ -1,9 +1,5 @@
 name: Rubocop
 
-require:
-  - rubocop-performance
-  - rubocop-rails
-
 on:
   pull_request:
     branches: [master]
