@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
       - name: Rubocop Linter Action
         uses: andrewmcodes/rubocop-linter-action@v3.2.0
         env:
