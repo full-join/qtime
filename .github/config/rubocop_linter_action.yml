@@ -1,0 +1,3 @@
+rubocop_extensions:
+  - 'rubocop-rails'
+  - 'rubocop-performance': '1.5.1'
