@@ -16,4 +16,4 @@ jobs:
           rubocop_version: 0.74
           reporter: github-pr-check
           additional_gems: 'spicerack-styleguide'
-          rubocop_flags: '-c rubocop/rubocop.yml --except Style/StringLiterals'
+          rubocop_flags: '-c .rubocop.yml'
