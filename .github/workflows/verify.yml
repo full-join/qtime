@@ -29,7 +29,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_DB: qtime_test
           POSTGRES_PASSWORD: postgres
-        ports: ['5432:5432']
+        ports: 5432/tcp
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
@@ -72,6 +72,7 @@ jobs:
           RAILS_ENV: test
           PGHOST: localhost
           PGUSER: postgres
+          PGPORT: ${{ job.services.postgres.ports[5432] }} # get randomly assigned published port
           QTIME_DATABASE_DEV_PASSWORD: postgres
         run: |
           bin/rails db:test:prepare
