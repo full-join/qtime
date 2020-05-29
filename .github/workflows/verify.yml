@@ -72,10 +72,9 @@ jobs:
           RAILS_ENV: test
           PGHOST: localhost
           PGUSER: postgres
-          PGPORT: ${{ job.services.postgres.ports[5432] }}
           QTIME_DATABASE_DEV_PASSWORD: postgres
         run: |
-          bin/rails db:setup
+          bin/rails db:test:prepare
 
       - name: Run tests
         run: bin/rspec
