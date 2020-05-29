@@ -1,0 +1,14 @@
+inherit_gem:
+  spicerack-styleguide:
+    - rubocop.yml
+Style/SymbolArray:
+  Enabled: false
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'bin/**/*'
