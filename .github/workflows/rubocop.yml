@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up rubocop-rails
-        run: gem install rubocop-rails:2.0.0
       - name: Rubocop Linter Action
         uses: andrewmcodes/rubocop-linter-action@v3.2.0
         env:
