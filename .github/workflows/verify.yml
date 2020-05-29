@@ -34,7 +34,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
       - name: Ruby gem cache
@@ -71,7 +70,7 @@ jobs:
         env:
           RAILS_ENV: test
           PGHOST: localhost
-          PGUSER: myapp
+          PGUSER: qtime
         run: |
           bin/rails db:setup
 
