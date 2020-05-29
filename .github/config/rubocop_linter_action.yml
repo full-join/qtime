@@ -1,3 +1,0 @@
-bundle: false
-rubocop_extensions:
-  - 'rubocop-rails'
