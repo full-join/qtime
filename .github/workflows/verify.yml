@@ -80,7 +80,14 @@ jobs:
           POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
           QTIME_DATABASE_DEV_PASSWORD: postgres
         run: |
-          bin/rails db:test:prepare
+          bin/rails db:create
+          bin/rails db:schema:load
 
       - name: Run tests
+        env:
+          RAILS_ENV: test
+          POSTGRES_HOST: localhost
+          POSTGRES_USER: postgres
+          POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
+          QTIME_DATABASE_DEV_PASSWORD: postgres
         run: bundle exec rspec
