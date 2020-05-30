@@ -80,7 +80,7 @@ jobs:
           PGPORT: ${{ job.services.postgres.ports[5432] }} # get randomly assigned published port
           QTIME_DATABASE_DEV_PASSWORD: postgres
         run: |
-          rails db:test:prepare
+          bin/rails db:test:prepare
 
       - name: Run tests
         run: bundle exec rspec
