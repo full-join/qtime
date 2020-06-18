@@ -1,0 +1,18 @@
+inherit_gem:
+  spicerack-styleguide:
+    - rubocop.yml
+Style/SymbolArray:
+  Enabled: false
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+Style/SymbolProc:
+  IgnoredMethods:
+    - 'create_table'
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'bin/**/*'
+    - 'db/migrate/20200528211008_add_devise_to_users.rb'

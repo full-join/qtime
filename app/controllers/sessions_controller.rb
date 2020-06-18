@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   before_action :set_session, only: [:show, :edit, :update, :destroy]
 
@@ -9,8 +11,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/1
   # GET /sessions/1.json
-  def show
-  end
+  def show; end
 
   # GET /sessions/new
   def new
@@ -18,8 +19,7 @@ class SessionsController < ApplicationController
   end
 
   # GET /sessions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sessions
   # POST /sessions.json
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
 
     respond_to do |format|
       if @sessions.save
-        format.html { redirect_to @sessions, notice: 'Session was successfully created.' }
+        format.html { redirect_to @sessions, notice: "Session was successfully created." }
         format.json { render :show, status: :created, location: @sessions }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class SessionsController < ApplicationController
   def update
     respond_to do |format|
       if @sessions.update(sessions_params)
-        format.html { redirect_to @sessions, notice: 'Session was successfully updated.' }
+        format.html { redirect_to @sessions, notice: "Session was successfully updated." }
         format.json { render :show, status: :ok, location: @sessions }
       else
         format.html { render :edit }
@@ -54,21 +54,22 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1
   # DELETE /sessions/1.json
   def destroy
-    @sessions.destroy
+    @sessions.destroy!
     respond_to do |format|
-      format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
+      format.html { redirect_to sessions_url, notice: "Session was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sessions
-      @sessions = Sessions.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def sessions_params
-      params.fetch(:sessions, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sessions
+    @sessions = Sessions.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def sessions_params
+    params.fetch(:sessions, {})
+  end
 end
