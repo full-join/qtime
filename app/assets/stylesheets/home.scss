@@ -61,12 +61,14 @@ li {
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
+  max-width: 175px;
+  margin-top: 15px;
   &:hover {
     opacity: .8;
   }
 }
 
-.button {
+.nav-button {
   font-size: 14px;
   padding: 10px 24px;
   display: inline;
