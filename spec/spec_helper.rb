@@ -17,8 +17,12 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara'
 require 'capybara/rspec'
+require_relative 'page_models/blackjack.rb'
+require_relative 'page_models/solitaire.rb'
+require_relative 'page_models/grocery_search.rb'
+require_relative 'page_models/typing_test.rb'
 
-Capybara.default_driver = :selenium
+Capybara.default_driver = :selenium_chrome
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

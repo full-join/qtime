@@ -1,0 +1,12 @@
+example_id                                | status  | run_time               |
+----------------------------------------- | ------- | ---------------------- |
+./spec/features/playground_spec.rb[1:1]   | unknown |                        |
+./spec/features/playground_spec.rb[1:2]   | unknown |                        |
+./spec/features/playground_spec.rb[1:3]   | passed  | 1 minute 26.65 seconds |
+./spec/features/playground_spec.rb[1:4]   | unknown |                        |
+./spec/features/playground_spec.rb[1:5]   | passed  | 2 minutes 44.4 seconds |
+./spec/helpers/places_helper_spec.rb[1:1] | unknown |                        |
+./spec/models/line_spec.rb[1:1:1]         | unknown |                        |
+./spec/models/line_spec.rb[1:1:2]         | unknown |                        |
+./spec/models/place_spec.rb[1:1]          | unknown |                        |
+./spec/models/user_spec.rb[1:1]           | unknown |                        |

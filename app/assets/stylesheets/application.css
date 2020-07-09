@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ .header {
+  height: 100px;
+ }
