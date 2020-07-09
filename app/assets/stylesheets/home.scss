@@ -2,15 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//Color Variables
+$coral: #fe8a71;
+$yellow: #f6cd61;
+$gold: #ffb900;
+$teal: #3da4ab;
+$dark-teal: #0e9aa7;
+$grey: #4a4e4d;
+
+
 body {
-  background-color: white;
   font-family: Avenir, sans-serif;
 }
 
 h1 {
   justify-content: center;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -20,8 +26,6 @@ h1 {
 }
 
 h2 {
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   float: center;
   margin-left: 360px;
   padding: 10px;
@@ -32,8 +36,6 @@ h2 {
 ol {
   font-weight: bold;
   font-size: 20px;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   padding-left: 10px;
 }
 
@@ -41,21 +43,20 @@ li {
   font-weight: normal;
   font-size: 18px;
   list-style-position: inside;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   padding: 10px 3px;
 }
 
-#signin {
-  float: right;
-  font-size: 14px;
-  background-color: #D8BFD8;
-  color: black;
-  border-radius: 5px;
-  padding: 10px 24px;
-  margin-right: 10px;
-  border: 1px #D8BFD8 solid;
+#header {
   text-align: center;
+}
+
+.logo {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  &:hover {
+    opacity: .8;
+  }
 }
 
 .button {
@@ -69,47 +70,43 @@ li {
     text-decoration: none;
     color: black;
     position: relative;
+    width: 100%;
     &:after {
       content: "";
       position: absolute;
-      top: -15px;
-      left: 0px;
+      top: 50%;
+      left: -12px;
+      transform: translateY(-50%);
       display: block;
       border-radius: 28px;
-      background: #D8BFD8;
-      width: 45px;
+      background: $coral;
       height: 45px;
-      transition: all .3s ease;
+      width: 45px;
+      transition: all .4s ease;
       z-index: -1;
     }
-  &:hover {
-    &:after {
-      width: 100%;
-     }
+    &:hover {
+      &:after {
+        width: 150%;
+        left: -25%;
+      }
     }
   }
-  a:hover {
-
-  }
 }
 
-li.fright {
-  float: right;
-}
-
-li.fleft {
-  float: left;
+.left, .right {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #searchbar {
-  
   padding: 10px 24px;
   margin-left: 400px;
   display: inline;
   height: 20px;
   width: 300px;
   font-size: 14px;
-  font-color: gray;
+  color: $grey;
   border-radius: 20px;
 }
 
