@@ -69,8 +69,7 @@ li {
 }
 
 .nav-button {
-  font-size: 14px;
-  padding: 10px 24px;
+  font-size: 16px;
   display: inline;
   margin: 5px;
   color: black;
@@ -96,16 +95,26 @@ li {
     }
     &:hover {
       &:after {
-        width: 150%;
-        left: -25%;
+        width: calc(100% + 40px);
+        left: -20px;
       }
     }
   }
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .left, .right {
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-basis: 40%;
+  padding-left: 12px;
+  margin: 0;
 }
 
 
@@ -114,10 +123,9 @@ form {
   text-align: center;
 }
 #searchbar {
-  padding: 10px 20px;
+  padding: 8px 20px;
   margin: 0 0 10px;
   display: inline-block;
-  height: 20px;
   width: 300px;
   font-size: 14px;
   color: $grey;
