@@ -17,7 +17,8 @@
 
 console.log('Hello World from Webpacker')
 
-import 'bootstrap'
+import 'bootstrap';
+import "@fortawesome/fontawesome-free/js/all";
 
 // test for using tooltip feature
 // document.addEventListener("turbolinks:load", () => {
