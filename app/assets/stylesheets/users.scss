@@ -3,15 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 form {
+  
   &.new-user {
-    p {
-      max-width: 265px;
-      margin: 10px auto;
+
+    width: 265px;
+    margin: auto;
+
+    p {      
       text-align: left;
     }
+
     label {
       width: 80px;
     }
+
     .submit-button {
       text-align: center;
     }
