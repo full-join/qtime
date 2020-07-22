@@ -11,3 +11,5 @@ RSpec.describe "Lines", type: :request do
   end
 
 end
+
+#sign in user before this

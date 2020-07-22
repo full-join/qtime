@@ -6,4 +6,6 @@ end
 def index
 end
 
+private
+
 end

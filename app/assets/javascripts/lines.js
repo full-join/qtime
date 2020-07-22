@@ -1,18 +1,21 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
- document.addEventListener("DOMContentLoaded", function(){
-  console.log("JSLoaded")
-   let name = localStorage.getItem("currentStore");
-   const currentStoreDiv = (document.getElementById('currentstore'))
-    if (currentStoreDiv !== null) {
-      document.querySelector('#currentstore').innerHTML = "You are at " + name + "!";
-    } 
+// $('#lineStatus').on('click', function(){
+var path_array = window.location.search.split('=');
+var google_id = path_array[1];
 
-    function lineWait() {
-      document.getElementById('lineStatus').innerHTML = 'In Store!';
-    }
 
-    $('#lineStatus').click(lineWait);
-
- })
+$.ajax({
+    type: 'POST',
+    url: '/lines',
+    data: {
+      google_id: google_id,
+      line: {
+        arrived_at: new Date()
+      }
+    },
+    // success: function(){
+    //   alert('success!')
+    // }
+});
