@@ -6,6 +6,7 @@
 //   alert(foo);
 // } 
  document.addEventListener("DOMContentLoaded", function(){
+     console.log("Hello World")
    let name = localStorage.getItem("currentStore");
    const currentStoreDiv = (document.getElementById('currentstore'))
     // if (currentStoreDiv !== null) {
