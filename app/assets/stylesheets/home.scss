@@ -9,8 +9,6 @@ body {
 
 h1 {
   justify-content: center;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -20,8 +18,6 @@ h1 {
 }
 
 h2 {
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   float: center;
   margin-left: 360px;
   padding: 10px;
@@ -32,8 +28,6 @@ h2 {
 ol {
   font-weight: bold;
   font-size: 20px;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   padding-left: 10px;
 }
 
@@ -41,8 +35,7 @@ li {
   font-weight: normal;
   font-size: 18px;
   list-style-position: inside;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
+  list-style-type: none;
   padding: 10px 3px;
 }
 
@@ -58,13 +51,14 @@ li {
   text-align: center;
 }
 
-.button {
+.header {
   font-size: 14px;
   padding: 10px 24px;
   display: inline;
   margin: 5px;
   color: black;
   border-radius: 5px;
+  height: 100px;
   a {
     text-decoration: none;
     color: black;

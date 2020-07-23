@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-    @sessions = Sessions.new
+    @sessions = Session.new
   end
 
   # GET /sessions/1/edit
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    @sessions = Sessions.new(session_params)
+    @sessions = Session.new(session_params)
 
     respond_to do |format|
       if @sessions.save

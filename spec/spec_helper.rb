@@ -15,10 +15,21 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'capybara'
+require 'capybara/rspec'
+require_relative 'page_models/blackjack.rb'
+require_relative 'page_models/solitaire.rb'
+require_relative 'page_models/grocery_search.rb'
+require_relative 'page_models/typing_test.rb'
+
+Capybara.default_driver = :selenium_chrome
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  config.include Capybara::DSL, :type => :feature
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
@@ -46,6 +57,7 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
+
   # The settings below are suggested to provide a good initial experience
   # with RSpec, but feel free to customize to your heart's content.
   # This allows you to limit a spec run to individual examples or groups
@@ -58,7 +70,7 @@ RSpec.configure do |config|
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options. We recommend
   # you configure your source control system to ignore this file.
-  # config.example_status_persistence_file_path = "spec/examples.txt"
+  config.example_status_persistence_file_path = "spec/examples.txt"
 
   # Limits the available syntax to the non-monkey patched syntax that is
   # recommended. For more details, see:

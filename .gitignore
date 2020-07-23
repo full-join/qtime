@@ -33,3 +33,6 @@
 yarn-debug.log*
 .yarn-integrity
 .idea/*
+.env
+**/*.DS_Store
+**/playground_spec.rb
