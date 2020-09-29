@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :posts
   get "profile", to: "users#show"
   resources :users do
-    resources :likes
   end
   get "login", to: "sessions#new"
   post "/login", to: "sessions#create"
