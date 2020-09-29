@@ -1,10 +1,13 @@
-<div>
-  <ul>
-    <li class="button fright" id="signin"><%= link_to "Sign Up", new_user_path %></li>
-    <li class="button fright"><%= link_to "Login", login_path %></li>
-    <li class="button fright"> <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank"> COVID-19 Resources </a> </li>
-    <li class="button fleft"> <%= link_to 'About Us', about_path %></li>
-    <li class="button fleft"><span>Additional Resources</span></li>
-    <li class="button fleft"><%= link_to 'Home', home_path%></li>
+<nav>
+  <ul class="left">
+    <li class="nav-button " data-toggle="tooltip"><%= link_to 'Home', home_path%></li>
+    <li class="nav-button "> <%= link_to 'About', about_path %></li>
+    <li class="nav-button "> <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">COVID-19 Info</a> </li>
   </ul>
-</div>
+  <%=  link_to image_tag('qt-logo.png', alt: "QTime logo", class: "logo"), home_path%>
+  <ul class="right">    
+    <li class="nav-button "><a href="#">Stores</a></li>
+    <li class="nav-button "><%= link_to "Login", login_path %></li>
+    <li class="nav-button " id="signin"><%= link_to "Sign Up", new_user_path %></li>
+  </ul>
+</nav>

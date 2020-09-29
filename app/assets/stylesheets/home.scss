@@ -2,38 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//Color Variables
+$coral: #fe8a71;
+$yellow: #f6cd61;
+$gold: #ffb900;
+$teal: #3da4ab;
+$dark-teal: #0e9aa7;
+$grey: #4a4e4d;
+
+
+// Overall Site styles
 body {
-  background-color: white;
   font-family: Avenir, sans-serif;
 }
 
 h1 {
-  justify-content: center;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  padding: 10px;
-  padding-top: 50px;
-  padding-left: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 50px 0 30px;
+  text-align: center;
 }
 
 h2 {
-  /*border: 2px solid black;
-  border-radius: 5px;*/
-  float: center;
-  margin-left: 360px;
-  padding: 10px;
-  font-style: italic;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 1rem 0 .5rem;
 }
 
 ol {
   font-weight: bold;
   font-size: 20px;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   padding-left: 10px;
 }
 
@@ -41,20 +39,37 @@ li {
   font-weight: normal;
   font-size: 18px;
   list-style-position: inside;
-  /*border: 2px solid black;
-  border-radius: 5px;*/
   padding: 10px 3px;
 }
 
-#signin {
-  float: right;
-  font-size: 14px;
+.italic {
+  font-style: italic;
+}
+
+.centered {
+  display: inline-block;
   text-align: center;
 }
 
-.button {
+
+// Header styles
+#header {
+  text-align: center;
+}
+
+.logo {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 175px;
+  margin-top: 15px;
+  &:hover {
+    opacity: .8;
+  }
+}
+
+.nav-button {
   font-size: 14px;
-  padding: 10px 24px;
   display: inline;
   margin: 5px;
   color: black;
@@ -63,48 +78,80 @@ li {
     text-decoration: none;
     color: black;
     position: relative;
+    width: 100%;
     &:after {
       content: "";
       position: absolute;
-      top: -15px;
-      left: 0px;
+      left: -10px;
+      top: 50%;      
+      transform: translateY(-50%);
       display: block;
       border-radius: 28px;
-      background: #D8BFD8;
-      width: 45px;
-      height: 45px;
-      transition: all .3s ease;
+      background: $coral;
+      height: 38px;
+      width: 38px;
+      transition: all .4s ease;
       z-index: -1;
     }
-  &:hover {
-    &:after {
-      width: 100%;
-     }
+    &:hover {
+      &:after {
+        width: calc(100% + 20px);
+        left: -10px;
+      }
     }
   }
-  a:hover {
-
+  @include media-breakpoint-up(lg) { 
+    font-size: 16px;
+    a {
+      &:after {
+        left: -12px;
+        height: 38px;
+        width: 38px;
+      }
+      &:hover {
+        &:after {
+          width: calc(100% + 40px);
+          left: -20px;
+        }
+      }
+    }
   }
 }
 
-li.fright {
-  float: right;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-li.fleft {
-  float: left;
+.left, .right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-basis: 40%;
+  padding-left: 12px;
+  margin: 0;
 }
 
+
+// Homepage styles
+form {
+  text-align: center;
+}
 #searchbar {
-  
-  padding: 10px 24px;
-  margin-left: 400px;
-  display: inline;
-  height: 20px;
+  padding: 8px 20px;
+  margin: 0 0 10px;
+  display: inline-block;
   width: 300px;
   font-size: 14px;
-  font-color: gray;
+  color: $grey;
   border-radius: 20px;
+}
+
+.helping {
+  width: 100%;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
 

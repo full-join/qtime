@@ -16,3 +16,11 @@
 // const imagePath = (name) => images(name, true)
 
 console.log('Hello World from Webpacker')
+
+import 'bootstrap';
+import "@fortawesome/fontawesome-free/js/all";
+
+// test for using tooltip feature
+// document.addEventListener("turbolinks:load", () => {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
